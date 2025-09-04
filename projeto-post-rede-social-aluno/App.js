@@ -1,4 +1,4 @@
-import { Text, View, SafeAreaView, StatusBar, StyleSheet } from 'react-native';
+import { Text, View, Image, SafeAreaView, StatusBar, StyleSheet } from 'react-native';
 
 export default function App(){
   return(
@@ -6,10 +6,15 @@ export default function App(){
       <View style={styles.screen}>
 
         <View style={styles.post}>
+        <View style={styles.user, {flexDirection: 'row'}}>
+        <Image style={styles.photo}
+        source={require('/assets/photo1.png')}
+        />
           <Text style={styles.author}>Lucas Barra</Text>
+          </View>
           <Text style={styles.content}>
             Este é o meu primeiro post.
-            Na rede social que eu estou desenvolvendo.
+            Vou aprender sobre View, Texte e StyleSheet.
           </Text>
         </View>
 
@@ -24,21 +29,34 @@ const styles = StyleSheet.create({
       padding: 20,
   },
   post: {
-    backgroundColor: 'purple',
-    borderColor: 'black',
-    borderWidth: 2,
+    backgroundColor: '#d3d3d3',
     padding: 15,
     borderRadius: 10,
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowRadius: 6,
+    shadowOffset: { width: 4, height: 2 },
+    elevation: 4, 
   },
 
   author: {
     fontWeight: 'bold',
-    fontSize: 20,
-    marginBottom: 8,
+    fontSize: 22,
+    marginTop: 20,
+    marginLeft: 7,
   },
 
   content: {
-      fontSize: 16,
+      marginTop: 10,
+      fontSize: 17,
       color: 'white',
-  }
+  },
+  user: {
+
+  },
+  photo: {
+    width: 60,
+    height: 60,
+    borderRadius: 50,
+  },
 });
